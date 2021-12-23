@@ -124,7 +124,7 @@ restaurant.get('/mealtypes',(req,res) => {
         query={mealtype_id:Number(req.query.mealtypes)}
     }
 
-db.collection('restaurants').find(query).toArray((err,result) => {
+db.collection('Restaurants').find(query).toArray((err,result) => {
     if(err) throw err;
     res.send(result)
     })
