@@ -117,11 +117,11 @@ db.collection('RestaurantLocation').find(query).toArray((err,result) => {
 })
 
 // return all MealTypes (Param)
-restaurant.get('/mealtypes',(req,res) => {
+restaurant.get('/mealvarieties',(req,res) => {
     var query = {};
-    console.log(req.query.mealtypes)
-    if(req.query.mealtypes){
-        query={mealtype_id:Number(req.query.mealtypes)}
+    console.log(req.query.mealvarieties)
+    if(req.query.mealvarieties){
+        query={mealtype_id:Number(req.query.mealvarieties)}
     }
 
 db.collection('Restaurants').find(query).toArray((err,result) => {
