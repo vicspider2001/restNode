@@ -21,7 +21,7 @@ restaurant.get('/',(req,res)=>{
 
 
 
-// return all Restaurantsy (Params)
+// return all Restaurants (Params)
 restaurant.get('/restaurants',(req,res) => {
     var query = {};
     console.log(req.query.city)
@@ -121,10 +121,10 @@ restaurant.get('/mealtypes',(req,res) => {
     var query = {};
     console.log(req.query.mealtypes)
     if(req.query.mealtypes){
-        query={menu_id:Number(req.query.mealtypes)}
+        query={mealtype_id:Number(req.query.mealtypes)}
     }
 
-db.collection('RestaurantData').find(query).toArray((err,result) => {
+db.collection('restaurants').find(query).toArray((err,result) => {
     if(err) throw err;
     res.send(result)
     })
