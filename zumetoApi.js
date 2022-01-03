@@ -173,7 +173,15 @@ restaurant.put('/updateStatus/:id',(req,res) => {
     res.send('data updated')
 })
 
-
+// All posted MenuItems
+app.post('/menuItem',(req,res) => {
+    console.log(req.body);
+    db.collection('receivedmenuItems').find({menu_id:{$in:req.body}}).toArray((err,result) => {
+        if(err) throw err;
+        res.send(result)
+    })
+    
+})
 
 
 MongoClient.connect(MongoUrl, (err,client) => {
