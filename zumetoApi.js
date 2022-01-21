@@ -176,7 +176,7 @@ restaurant.put('/updateStatus/:id',(req,res) => {
 // All posted MenuItems
 restaurant.post('/menuItem',(req,res) => {
     console.log(req.body);
-    db.collection('receivedmenuItems').insertOne(req.body,(err,result)=>{
+    db.collection('postorders').insertOne(req.body,(err,result)=>{
         if(err) throw err;
         res.send(result)
     })
