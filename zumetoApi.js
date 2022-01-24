@@ -176,7 +176,7 @@ restaurant.put('/updateStatus/:id',(req,res) => {
 // All posted MenuItems
 restaurant.post('/menuItem',(req,res) => {
     console.log(req.body);
-    db.collection('receivedmenuItems').find({menu_id:{$in:req.body}}).toArray((err,result) => {
+    db.collection('RestaurantMenu').find({menu_id:{$in:req.body}}).toArray((err,result) => {
         if(err) throw err;
         res.send(result)
     })
